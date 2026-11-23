@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something for You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <section id="welcomePage">
+        <div class="heart">♡</div>
+        <h1>Hayyy, kak oz!</h1>
+        <p>I have something for u. ready?</p>
+        <button onclick="startGame()">Let's go! ♡</button>
+    </section>
+
+    <section id="codePage" class="hidden">
+        <h2>Secret Code 🔐</h2>
+        <p>Before we continue, u have to guess the secret code!</p>
+        <input type="text" id="secretInput" placeholder="Enter the code">
+        <small>*Clue: tanggal dan bulan first date kita.</small>
+        <p id="message"></p>
+        <button onclick="checkCode()">Submit ♡</button>
+    </section>
+
+    <section id="surprisePage" class="hidden">
+        <div class="heart">💗</div>
+        <h2>A Little Surprise!</h2>
+        <p>Actually, I have something for u. Do u want to see it?</p>
+        <button onclick="showNextPage()">MAUUU </button>
+        <button id="noButton" onclick="sayNo()">ENGGA</button>
+
+        <div id="angryMessage" class="hidden">
+            <div class="angry-face">😡</div>
+            <p>HAH?! KAMU GA SAYANG AKU?!</p>
+            <p>Jahat banget sih kamu </p>
+            <p>Yaudah, aku kasih kesempatan kedua.</p>
+            <button onclick="showNextPage()">IYA DEH MAU </button>
+        </div>
+    </section>
+
+    <section id="quizPage" class="hidden">
+        <h2>Do You Know Me? 💭</h2>
+        <p>Mana yang lebih aku suka?</p>
+
+        <div class="choice-container">
+            <button class="choice-button" onclick="chooseAnswer('Beach')">🏖️ Beach</button>
+            <button class="choice-button" onclick="chooseAnswer('Mountain')">⛰️ Mountain</button>
+        </div>
+
+        <p id="quizResult"></p>
+        <p id="prankText" class="hidden">PRANK WKAKAKAKA </p>
+        <button id="continueButton" class="hidden" onclick="goToNextGame()">NEXT ♡</button>
+    </section>
+
+    <section id="choosePage" class="hidden">
+        <h2>Choose One! ✨</h2>
+        <p id="roundNumber">Round 1 of 4</p>
+        <h3 id="chooseQuestion"></h3>
+        <div id="chooseOptions" class="choice-container"></div>
+        <p id="chooseResult"></p>
+        <p id="chooseComment"></p>
+        <button id="nextRoundButton" class="hidden" onclick="nextRound()">NEXT ♡</button>
+    </section>
+
+    <!-- SPIN THE QUESTION -->
+    <section id="spinPage" class="hidden">
+        <h2>Spin the Question! 🎡</h2>
+        <p>Let's see what question you'll get!</p>
+
+        <div class="wheel-pointer">▼</div>
+
+        <div id="questionWheel" class="question-wheel">
+            <div class="wheel-number">1</div>
+            <div class="wheel-number">2</div>
+            <div class="wheel-number">3</div>
+            <div class="wheel-number">4</div>
+            <div class="wheel-number">5</div>
+            <div class="wheel-number">6</div>
+            <div class="wheel-number">7</div>
+            <div class="wheel-number">8</div>
+            <div class="wheel-center">SPIN</div>
+        </div>
+
+        <button id="spinButton" onclick="spinWheel()">SPIN! 🎡</button>
+
+        <div id="questionArea" class="hidden">
+            <h3 id="selectedQuestion"></h3>
+
+            <textarea id="questionAnswer"
+                placeholder="Tulis jawaban kamu di sini..."></textarea>
+
+            <button onclick="submitAnswer()">Kirim jawaban </button>
+        </div>
+
+        <div id="spinChoices" class="hidden">
+            <p>So, what do u want to do next? 👀</p>
+
+            <button onclick="spinAgain()">SPIN AGAIN 🎡</button>
+
+            <button onclick="goToFinalPage()">UDAH CUKUP! </button>
+        </div>
+
+        <p id="spinMessage"></p>
+    </section>
+
+    <!-- FINAL SURPRISE -->
+    <section id="finalPage" class="hidden">
+        <h2>Okay, That's All! 💗</h2>
+        <p>But wait... I still have something for u.</p>
+        <p>Click the gift to open it!</p>
+
+        <div id="giftBox" onclick="openGift()">🎁</div>
+        <p id="giftHint">Psst... there's something inside! 👀</p>
+
+        <div id="giftContent" class="hidden">
+            <h2>FINALLYYY! YOU MADE IT! 🎉</h2>
+            <p>Here's a little memory of us.</p>
+
+            <video id="ourVideo" controls>
+                <source src="video/ozi%20vid.mp4" type="video/mp4">
+                Browser kamu tidak mendukung video.
+            </video>
+
+            <audio id="backgroundMusic" loop>
+                <source src="music/shapeofmy.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="final-message">
+                <p>Gimana? seru nggak? jangan bilang biasa aja, ya. gue udah capek-capek bikin ini WKWKWK.</p>
+
+                <p>Anyway, thanks for being my partner in crime, teman ngobrol, dan orang yang kadang ngeselin tapi tetap asik diajak bercanda.</p>
+
+                <p>Jangan kepedean y, ini bukan surat cinta. </p>
+
+                <p>See you in another random adventure, Ozi! ♡</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
